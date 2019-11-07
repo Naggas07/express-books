@@ -21,6 +21,19 @@ module.exports.celebrities = ((req, res, next) => {
         )
 })
 
+module.exports.celebrityDetail = (req, res, next) => {
+    const id = req.params.id
+
+    Celebrity.findById(id)
+        .then(
+            celebrity => {
+                res.render('celebrities/show', {celebrity})
+            }
+        ).catch(
+            error => next(error)
+        )
+}
+
 module.exports.movies = ((req, res, next) => {
     Movie.find()
         .then(
