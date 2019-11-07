@@ -34,6 +34,10 @@ module.exports.celebrityDetail = (req, res, next) => {
         )
 }
 
+module.exports.createCelebrity = (req, res, next) => {
+    
+}
+
 module.exports.movies = ((req, res, next) => {
     Movie.find()
         .then(
